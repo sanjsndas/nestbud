@@ -4,13 +4,31 @@
  <script defer data-domain="nestbudgardening.vercel.app" src="https://plausible.io/js/script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NestBud Gardening - Micro-irrigation Experts</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>NaturaNook | Smart Irrigation Solutions & Water Management</title>
     <style>
+        /* Global Styles */
+        :root {
+            --water-blue: #3a7ca5;
+            --earth-green: #4a6741;
+            --clay-brown: #8b5a2b;
+            --sand-beige: #e1c391;
+            --stone-gray: #d8d8d8;
+            --text-dark: #333333;
+            --text-light: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Merriweather', serif;
+        }
+
+       
 
 
 
-        body {
+     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -91,353 +109,842 @@
     }
 
 
+     
+            background-color: #f9f7f0;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--water-blue);
+            margin-bottom: 20px;
+        }
 
-        
-        @keyframes droplet-fall {
-            0% { transform: translateY(-20px); opacity: 0; }
-            20% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(100vh); opacity: 0; }
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
         }
-        .droplet {
-            position: absolute;
-            width: 16px;
-            height: 24px;
-            background: rgba(149, 202, 255, 0.6);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            animation: droplet-fall 5s linear infinite;
+
+        h2 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--sand-beige);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
         }
-        .page-bg {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+
+        h3 {
+            font-size: 1.8rem;
         }
-        .nav-link:hover {
-            color: #1e40af;
-            border-bottom: 2px solid #1e40af;
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
         }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-        }
-        .testimonial-card {
+
+        a {
+            color: var(--water-blue);
+            text-decoration: none;
             transition: all 0.3s ease;
         }
-        .testimonial-card:hover {
-            transform: scale(1.02);
+
+        a:hover {
+            color: var(--earth-green);
+            text-decoration: underline;
         }
-        .water-wave {
-            position: relative;
+
+        /* Header Styles */
+        header {
+            background-color: var(--water-blue);
+            color: var(--text-light);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .slogan {
+            font-style: italic;
+            color: var(--sand-beige);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        nav ul li a:hover {
+            color: var(--sand-beige);
+            text-decoration: none;
+        }
+
+        /* Secondary Navigation */
+        .secondary-nav {
+            background-color: var(--earth-green);
+            padding: 15px 0;
+        }
+
+        .secondary-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .secondary-nav ul li {
+            margin: 0 15px;
+        }
+
+        .secondary-nav ul li a {
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .secondary-nav ul li a:hover {
+            color: var(--sand-beige);
+        }
+
+        .secondary-nav ul li a[aria-current="page"] {
+            font-weight: bold;
+            color: var(--sand-beige);
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0a4c2c1e-6a0a-4f9c-8c2c-6b8e2b2a5c7b.png');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--earth-green);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-blue {
+            background-color: var(--water-blue);
+        }
+
+        .btn:hover {
+            background-color: var(--clay-brown);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .mission-values {
+            margin-top: 30px;
+        }
+
+        .mission-values h4 {
+            color: var(--clay-brown);
+            margin-bottom: 10px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--water-blue);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-img {
+            height: 200px;
             overflow: hidden;
         }
-        .water-wave::after {
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            margin-bottom: 15px;
+        }
+
+        .water-savings {
+            background-color: rgba(58, 124, 165, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .water-savings p {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* Irrigation Systems Section */
+        .systems {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .system {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .system-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .system-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .system-info ul {
+            list-style-type: none;
+            margin: 20px 0;
+        }
+
+        .system-info ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .system-info ul li:before {
             content: "";
             position: absolute;
-            bottom: -5px;
             left: 0;
-            width: 100%;
-            height: 20px;
-            background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.4) 0%, rgba(0,0,0,0) 70%);
-            animation: wave 3s linear infinite;
+            top: 8px;
+            width: 15px;
+            height: 15px;
+            background-color: var(--water-blue);
+            border-radius: 50%;
         }
-        @keyframes wave {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+
+        /* Smart Controller Section */
+        .smart-controller {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .controller-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature {
+            padding: 30px;
+            border-radius: 10px;
+            background-color: rgba(58, 124, 165, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            background-color: rgba(58, 124, 165, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--water-blue);
+            margin-bottom: 20px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--water-blue);
+            color: var(--text-light);
+        }
+
+        .testimonials h2 {
+            color: var(--text-light);
+            border-bottom-color: var(--sand-beige);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+        }
+
+        /* Water Conservation Tips */
+        .tips {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tip-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--water-blue);
+        }
+
+        .tip-card h3 {
+            color: var(--water-blue);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--water-blue);
+            color: var(--text-light);
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--sand-beige);
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--earth-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--sand-beige);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+            }
+
+            nav ul li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content,
+            .system,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img,
+            .system-img {
+                order: -1;
+            }
+
+            .secondary-nav ul li {
+                margin: 0 10px;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="page-bg min-h-screen font-sans text-gray-800">
-    <!-- Water droplet background elements -->
-    <div class="fixed inset-0 overflow-hidden z-0 pointer-events-none">
-        <div class="droplet" style="left: 10%; animation-delay: 0s;"></div>
-        <div class="droplet" style="left: 20%; animation-delay: 1s;"></div>
-        <div class="droplet" style="left: 35%; animation-delay: 2.5s;"></div>
-        <div class="droplet" style="left: 50%; animation-delay: 1.5s;"></div>
-        <div class="droplet" style="left: 65%; animation-delay: 3s;"></div>
-        <div class="droplet" style="left: 80%; animation-delay: 0.5s;"></div>
-        <div class="droplet" style="left: 90%; animation-delay: 2s;"></div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg relative z-10">
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <div>
-                        <span class="text-2xl font-bold text-blue-800">NestBud Gardening</span>
-                        <p class="text-sm text-blue-600 italic">"Every drop, perfectly placed."</p>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="nav-link py-2 px-4 text-blue-800 border-b-2 border-blue-800 font-medium" aria-current="page">Home</a>
-                    <a href="privacy.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Privacy</a>
-                    <a href="terms.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Terms & Conditions</a>
-                    <a href="cookies.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Cookies</a>
-                    <a href="contact.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Contact Us</a>
-                </div>
-                <button class="md:hidden text-gray-700 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo">NaturaNook</div>
+                <div class="slogan">Smart Water Solutions for Sustainable Growth</div>
             </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="relative z-10">
-        <div class="container mx-auto px-6 py-16 md:py-24 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-blue-900 mb-6"></h1>
-            <p class="text-xl md:text-2xl text-blue-800 mb-8"></p>
-            <div class="water-wave inline-block mb-12">
-                <img src="" alt="Micro-irrigation system" class="rounded-lg shadow-xl max-w-full h-auto" style="max-height: 400px;">
-            </div>
-            <a href="#services" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block shadow-lg"</a>
+           
         </div>
     </header>
 
-    <!-- Main Content Container -->
-    <div class="container mx-auto px-6 py-12 relative z-10">
-        <!-- Services Expanded Section -->
-        <section id="services" class="mb-20">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Comprehensive Horticultural Services</h2>
-            <p class="text-center text-gray-700 mb-10 max-w-4xl mx-auto">NestBud Gardening offers a full spectrum of water-efficient gardening solutions tailored to urban environments, community spaces, and permaculture projects. Our interdisciplinary approach combines cutting-edge irrigation technology with time-tested organic gardening principles.</p>
+    <nav class="secondary-nav">
+        <ul>
+            <li><a href="index.html" tabindex="0"aria-current="page">Home</a></li>
+            <li><a href="privacy.html" tabindex="0">Privacy</a></li>
+            <li><a href="terms.html" tabindex="0" >Terms & Conditions</a></li>
+            <li><a href="cookies.html" tabindex="0">Cookies</a></li>
+            <li><a href="contact.html" tabindex="0">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Advanced Irrigation Solutions</h1>
+            <p>Reduce water waste by up to 50% with our smart irrigation systems designed for New York's unique climate and landscapes.</p>
+            <a href="#contact" class="btn">Get a Free Water Audit</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About NaturaNook</h2>
+            <div class="about-content">
+                <div class="about-info">
+                    <p >NaturaNook is committed to providing innovative irrigation solutions that prioritize sustainability and efficiency. Our team of experts combines years of experience with the latest technology to ensure that your plants receive the optimal amount of water while conserving resources.</p>
+                    <div class="mission-values">
+                        <h4>Our Mission</h4>
+                        <p>To promote sustainable gardening practices through advanced irrigation technology.</p>
+                        <h4>Our Values</h4>
+                        <p>Integrity, innovation, and environmental stewardship guide our approach to irrigation solutions.</p>
+                    </div>
+                </div>
+                <div class="about-img">
+                    <img src="p1.png" alt="NaturaNook Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Irrigation Services</h2>
+            <p>NaturaNook specializes in water-efficient irrigation solutions that combine cutting-edge technology with sustainable practices. Our systems are designed to deliver the right amount of water at the right time, maximizing plant health while minimizing waste.</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="s1.jpeg" alt="Micro-irrigation Installation" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-3">Smart Irrigation Systems</h3>
-                        <section class="text-gray-700 mb-4 space-y-3">
-                            <p>Our precision-engineered micro-irrigation solutions revolutionize water delivery by targeting root zones with droplet-by-droplet accuracy. Using moisture sensors and automated controls, we create intelligent watering networks that adjust to weather conditions, soil types, and plant requirements.</p>
-                            <p>The patented RainDrop™ emitter technology eliminates runoff and evaporation waste while preventing fungal diseases caused by foliage wetting. Our systems integrate seamlessly with existing landscapes while offering remote monitoring via mobile apps.</p>
-                            <p>Commercial-scale installations feature rainwater harvesting integration and greywater recycling components that can reduce municipal water consumption by up to 70%.</p>
-                        </section>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center">Detailed Specifications →</a>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="s1.jpeg" alt="Professional installation of drip irrigation system in a residential garden">
                     </div>
-                </div>
-                <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="s2.png" alt="Soil Restoration" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-3">Soil Regeneration Services</h3>
-                        <section class="text-gray-700 mb-4 space-y-3">
-                            <p>Healthy soil forms the foundation of every successful garden. Our comprehensive soil revitalization program begins with detailed laboratory analysis of mineral content, microbial activity, and water retention capacity.</p>
-                            <p>We employ regenerative techniques including biochar amendment, mycorrhizal inoculation, and compost tea applications to rebuild soil structure. Our permaculture specialists design customized crop rotation schedules and green manure planting strategies that naturally replenish nutrients.</p>
-                            <p>Urban soil remediation services address common contaminants like heavy metals and petroleum residues through phytoremediation techniques using specialized hyperaccumulator plants combined with organic chelation treatments.</p>
-                        </section>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center">Soil Health Reports →</a>
-                    </div>
-                </div>
-                <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="s3.jpg" alt="Garden Consultation" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-3">Integrated Garden Design</h3>
-                        <section class="text-gray-700 mb-4 space-y-3">
-                            <p>Our holistic design methodology creates beautiful, productive landscapes that thrive with minimal inputs. Combining principles of permaculture, xeriscaping, and ecological horticulture, we develop site-specific plans that enhance biodiversity while maximizing water efficiency.</p>
-                            <p>Each design undergoes rigorous microclimate analysis using drone mapping and 3D modeling software to optimize plant placement. Our edible landscapes incorporate companion planting strategies that naturally deter pests while boosting yields.</p>
-                            <p>For commercial clients, we offer full lifecycle management including seasonal maintenance scheduling, integrated pest management programs, and staff training in sustainable horticultural practices.</p>
-                        </section>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center">Design Portfolio →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Expanded Consultant Section -->
-        <section class="mb-20 bg-white rounded-xl shadow-lg overflow-hidden">
-            <div class="md:flex">
-                <div class="md:w-1/2">
-                    <img src="p3.jpg" alt="Garden Consultant" class="w-full h-full object-cover">
-                </div>
-                <div class="md:w-1/2 p-8">
-                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Comprehensive Gardening Consultation Services</h2>
-                    <article class="space-y-6">
-                        <p>Our consultation process begins with an in-depth site evaluation conducted by certified horticultural therapists and irrigation specialists. Using advanced diagnostic tools including soil penetrometers, infrared thermography, and digital moisture meters, we assess every facet of your garden's ecosystem.</p>
-                        
-                        <section>
-                            <h3 class="text-xl font-semibold text-blue-800 mb-2">Detailed Analysis Components:</h3>
-                            <ul class="list-disc pl-6 space-y-2">
-                                <li><strong>Hydrological Assessment:</strong> Mapping water flow patterns, drainage issues, and optimal irrigation zones using GPS-enabled topography surveys</li>
-                                <li><strong>Soil Profiling:</strong> Comprehensive testing including texture analysis, pH measurement, organic matter content, and microbial biomass assessment</li>
-                                <li><strong>Plant Health Audit:</strong> Identification of nutritional deficiencies, disease pressures, and pest vulnerabilities through microscopic examination</li>
-                                <li><strong>Environmental Stress Evaluation:</strong> Measurement of urban heat island effects, wind exposure, and pollution impacts on plant vitality</li>
-                            </ul>
-                        </section>
-
-                        <p>Following the assessment phase, we develop tailored recommendations that address both immediate concerns and long-term sustainability goals. Our action plans incorporate progressive implementation milestones with measurable performance indicators.</p>
-
-                        <section>
-                            <h3 class="text-xl font-semibold text-blue-800 mb-2">Consultation Deliverables:</h3>
-                            <ul class="list-disc pl-6 space-y-2">
-                                <li>100+ page digital report with annotated photographs and interactive 3D models</li>
-                                <li>Customized plant selection guide optimized for your microclimate</li>
-                                <li>Five-year water conservation strategy with projected savings analysis</li>
-                                <li>Maintenance calendar synchronized with local phenological indicators</li>
-                                <li>Round-the-clock access to our horticultural support team</li>
-                            </ul>
-                        </section>
-                    </article>
-
-                    <div class="mt-8 bg-blue-50 p-4 rounded-lg">
-                        <h4 class="font-bold text-blue-800 mb-2">Specialized Consultation Packages:</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-white p-3 rounded shadow">
-                                <h5 class="font-semibold">Urban Homestead Starter</h5>
-                                <p class="text-sm">Transform smaller spaces into food-producing oases with integrated watering systems</p>
-                            </div>
-                            <div class="bg-white p-3 rounded shadow">
-                                <h5 class="font-semibold">Corporate Campus Solutions</h5>
-                                <p class="text-sm">Large-scale sustainable landscaping with automated maintenance protocols</p>
-                            </div>
+                    <div class="service-content">
+                        <h3>Custom Irrigation Installation</h3>
+                        <p>Our expert team designs and installs complete irrigation systems tailored to your landscape's specific needs, soil type, and plant requirements.</p>
+                        <div class="water-savings">
+                            <p><strong>Water Savings:</strong> 30-50% compared to traditional systems</p>
+                            <p><strong>Best For:</strong> New landscapes or complete system replacements</p>
                         </div>
                     </div>
-
-                    <a href="contact.html" class="mt-6 bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded inline-block transition duration-300 shadow-md">Schedule Your Comprehensive Assessment</a>
                 </div>
-            </div>
-        </section>
 
-        <!-- Expanded About Us Section -->
-        <section id="about" class="mb-20">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Story: Cultivating Sustainable Futures</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                <div>
-                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">From Academic Research to Urban Farming Revolution</h3>
-                    <article class="space-y-6">
-                        <p>NestBud Gardening traces its roots to 2010 when founder Dr. Maya Waters began her pioneering research in applied hydroecology at NYU's Environmental Studies Department. Frustrated by the disconnect between academic water conservation theories and practical urban gardening needs, Dr. Waters established our first experimental micro-irrigation plot in a Greenwich Village community garden.</p>
-
-                        <section>
-                            <h4 class="text-xl font-medium text-blue-700 mb-2">Key Milestones in Our Journey:</h4>
-                            <ul class="list-disc pl-6 space-y-2">
-                                <li><strong>2012:</strong> Developed prototype moisture-responsive emitters that reduced water use by 58% in field trials</li>
-                                <li><strong>2015:</strong> Officially incorporated as NestBud Gardening with three employees serving NYC clients</li>
-                                <li><strong>2017:</strong> Awarded Urban Innovation Grant from NYC Department of Environmental Protection</li>
-                                <li><strong>2019:</strong> Expanded to commercial-scale installations with proprietary monitoring software</li>
-                                <li><strong>2021:</strong> Recognized by EPA for outstanding contribution to sustainable urban development</li>
-                                <li><strong>2023:</strong> Current team of 28 specialists managing projects across the tri-state area</li>
-                            </ul>
-                        </section>
-
-                        <p>Today, our interdisciplinary team blends scientific rigor with hands-on gardening expertise. Staff members include certified arborists, soil scientists, landscape architects, and master gardeners who participate in ongoing research collaborations with leading universities.</p>
-
-                        <section>
-                            <h4 class="text-xl font-medium text-blue-700 mb-2">Philosophy and Approach:</h4>
-                            <p>We embrace a systems-thinking methodology that views urban gardens as interconnected ecological networks. Our design principles emphasize:</p>
-                            <ul class="list-disc pl-6 space-y-2">
-                                <li><strong>Biomimicry:</strong> Designing solutions inspired by natural hydrological patterns</li>
-                                <li><strong>Resilience Engineering:</strong > Building systems that adapt to changing environmental conditions</li>
-                                <li><strong>Community Engagement:</strong> Involving local stakeholders in the design and maintenance processes to foster ownership and stewardship</li>
-                            </ul>
-                        </section>
-                    </article>
-                </div>
-                <div>
-                    <img src="p1.png" alt="Our Team" class="rounded-lg shadow-xl w-full">
-                </div>
-            </div>
-        </section>
-
-        <!-- Expanded Testimonials Section -->
-        <section id="testimonials" class="mb-20 bg-blue-50 rounded-xl p-8">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">What Our Clients Say About Us</h2>
-            <p class="text-center text-gray-700 mb-10 max-w-4xl mx-auto">Our clients' satisfaction is our top priority. We take pride in the positive feedback we receive, which reflects our commitment to excellence in service and sustainable practices. Here are some testimonials from our valued customers:</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <img src="t1.jpg" alt="Sarah J." class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">Sarah J.</h4>
-                            <p class="text-blue-600 text-sm">Brooklyn, NY</p>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="s2.jpeg" alt="Technician upgrading old sprinkler heads to water-efficient models">
+                    </div>
+                    <div class="service-content">
+                        <h3>System Upgrades & Retrofits</h3>
+                        <p>Transform your outdated irrigation system with water-saving components like smart controllers, efficient sprinkler heads, and drip irrigation systems to enhance performance and reduce water usage.</p>
+                        <div class="water-savings">
+                            <p><strong>Water Savings:</strong> Up to 40% with upgrades</p>
+                            <p><strong>Best For:</strong> Existing systems needing improvement</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic">"Our community garden's water bill dropped by 55% after NestBud installed their micro-irrigation system. The plants are actually healthier now too! Their team was professional, knowledgeable, and truly cared about our project."</p>
-                    <div class="mt-4 flex">
-                        <span class="text-yellow-400">★★★★★</span>
-                    </div>
                 </div>
-                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <img src="t2.jpg" alt="Michael T." class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">Michael T.</h4>
-                            <p class="text-blue-600 text-sm">Queens, NY</p>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="s3.jpeg" alt="Rainwater harvesting system installed in a garden">
+                    </div>
+                    <div class="service-content">
+                        <h3>Rainwater Harvesting</h3>
+                        <p>Capture and utilize rainwater for irrigation, reducing reliance on municipal water sources and promoting sustainability.</p>
+                        <div class="water-savings">
+                            <p><strong>Water Savings:</strong> Up to 50% of irrigation needs</p>
+                            <p><strong>Best For:</strong> Eco-conscious homeowners</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic">"The soil restoration service transformed my clay-heavy yard into a productive vegetable garden. I'm amazed at the difference organic methods can make. The team was patient and explained every step of the process."</p>
-                    <div class="mt-4 flex">
-                        <span class="text-yellow-400">★★★★★</span>
-                    </div>
                 </div>
-                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <img src="t3.jpg" alt="Priya K." class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">Priya K.</h4>
-                            <p class="text-blue-600 text-sm">Manhattan, NY</p>
-                        </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="s4.jpeg" alt="Smart irrigation controller managing water distribution">
                     </div>
-                    <p class="text-gray-700 italic">"As a busy professional, the automated watering system has been a lifesaver. My plants have never looked better, and I save hours each week. The customer service was exceptional, and I felt supported throughout the entire process."</p>
-                    <div class="mt-4 flex">
-                        <span class="text-yellow-400">★★★★★</span>
+                    <div class="service-content">
+                        <h3>Smart Irrigation Control</h3>
+                        <p>Utilize advanced technology to monitor weather conditions and soil moisture, ensuring optimal watering schedules and reducing waste.</p>
+                        <div class="water-savings">
+                            <p><strong>Water Savings:</strong> Up to 50% with smart scheduling</p>
+                            <p><strong>Best For:</strong> Tech-savvy homeowners</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Expanded Gardening Tips Section -->
-        <section id="tips" class="mb-20">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Water-Smart Gardening Tips for Every Gardener</h2>
-            <p class="text-center text-gray-700 mb-10 max-w-4xl mx-auto">Whether you're a seasoned gardener or just starting out, implementing water-smart practices can significantly enhance your garden's health and sustainability. Here are some expert tips to help you conserve water while promoting plant growth:</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="p4.jpg" alt="Watering Tips" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-3">5 Ways to Reduce Garden Water Usage</h3>
-                        <ol class="list-decimal pl-6 space-y-2">
-                            <li>Implement drip irrigation systems to target roots directly, minimizing evaporation and runoff.</li>
-                            <li>Use organic mulch to retain soil moisture and reduce evaporation, while also suppressing weeds.</li>
-                            <li>Choose drought-resistant plants that thrive in your climate, reducing the need for supplemental watering.</li>
-                            <li>Water early in the morning or late in the evening to minimize evaporation losses during the hottest parts of the day.</li>
-                            <li>Collect rainwater in barrels for irrigation during dry spells, utilizing a natural resource to nourish your garden.</li>
-                        </ol>
-                    </div>
+    <section id="systems" class="systems">
+        <div class="container">
+            <h2>Irrigation Systems We Offer</h2>
+            <div class="system">
+                <div class="system-img">
+                    <img src="s5.jpeg" alt="Drip irrigation system in a vegetable garden">
                 </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="p5.jpg" alt="Soil Health Tips" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-3">Improving Soil Health for Better Water Retention</h3>
-                        <p class="text-gray-700 mb-4">Healthy soil is the foundation of a thriving garden. Here are some tips to enhance your soil's ability to retain moisture:</p>
-                        <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-                            <li>Incorporate organic matter like compost to enhance soil structure and increase its water-holding capacity.</li>
-                            <li>Test your soil regularly to understand its nutrient needs and adjust your amendments accordingly.</li>
-                            <li>Rotate crops to prevent nutrient depletion and pest buildup, ensuring a balanced ecosystem in your garden.</li>
-                            <li>Consider cover cropping during the off-season to protect soil from erosion and improve its organic content.</li>
-                        </ul>
-                    </div>
+                <div class="system-info">
+                    <h3>Drip Irrigation</h3>
+                    <p>Efficiently delivers water directly to the plant roots, minimizing evaporation and runoff.</p>
+                    <ul>
+                        <li>Ideal for vegetable gardens and flower beds</li>
+                        <li>Reduces water usage by 30-50%</li>
+                        <li>Promotes healthy plant growth</li>
+                    </ul>
                 </div>
             </div>
-        </section>
 
-        <!-- Expanded Disclaimer Section -->
-        <section class="mb-20 bg-gray-100 p-6 rounded-lg">
-            <h2 class="text-2xl font-bold text-blue-900 mb-4">Disclaimer</h2>
-            <p class="text-gray-700">The information provided on this website is for general informational purposes only. While we strive to provide accurate and up-to-date information, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk. We encourage users to consult with a qualified professional before making any decisions based on the information provided herein.</p>
-        </section>
+            <div class="system">
+                <div class="system-img">
+                    <img src="s6.jpeg" alt="Sprinkler system in a lawn">
+                </div>
+                <div class="system-info">
+                    <h3>Sprinkler Systems</h3>
+                    <p>Automated systems that provide even coverage for lawns and gardens, adjustable for different plant needs.</p>
+                    <ul>
+                        <li>Perfect for large areas</li>
+                        <li>Can be customized for various landscapes</li>
+                        <li>Water-efficient models available</li>
+                    </ul>
+                </div>
+            </div>
 
-        <!-- Expanded Customer Satisfaction Section -->
-        <section class="mb-20 text-center">
-            <h2 class="text-3xl font-bold text-blue-900 mb-4">Customer Satisfaction: Our Commitment to You</h2>
-            <p class="text-gray-700 mb-4">At NestBud Gardening, we prioritize our clients' needs and strive to exceed their expectations. Our commitment to quality service and sustainable practices ensures that your gardening experience is both enjoyable and rewarding. We believe that satisfied customers are the foundation of our success, and we work tirelessly to build lasting relationships based on trust and transparency.</p>
-            <p class="text-gray-700">Join our community of satisfied customers and transform your garden today! Contact us to learn more about our services and how we can help you achieve your gardening goals.</p>
-        </section>
-    </div>
+            <div class="system">
+                <div class="system-img">
+                    <img src="s7.jpeg" alt="Soaker hose in a garden bed">
+                </div>
+                <div class="system-info">
+                    <h3>Soaker Hoses</h3>
+                    <p>Flexible hoses that allow water to seep out slowly, ideal for garden beds and borders.</p>
+                    <ul>
+                        <li>Great for flower and vegetable gardens</li>
+                        <li>Reduces water waste</li>
+                        <li>Easy to install and move</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="smart" class="smart-controller">
+        <div class="container">
+            <h2>Smart Irrigation Controllers</h2>
+            <p>Our smart controllers adjust watering schedules based on real-time weather data and soil moisture levels, ensuring your plants receive the right amount of water without waste.</p>
+            <div class="controller-features">
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-cloud-sun"></i></div>
+                    <h3>Weather-Based Scheduling</h3>
+                    <p>Automatically adjusts watering based on rainfall and temperature.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-water"></i></div>
+                    <h3>Soil Moisture Sensors</h3>
+                    <p>Monitors soil moisture levels to optimize watering times.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Remote Access</h3>
+                    <p>Control your irrigation system from anywhere using your smartphone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">"NaturaNook transformed my garden with their smart irrigation system. I've seen a significant reduction in my water bill!"</div>
+                    <div class="testimonial-author">- Sarah J.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">"The team was professional and knowledgeable. My plants have never looked better!"</div>
+                    <div class="testimonial-author">- Mark T.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">"I love the rainwater harvesting system they installed. It's eco-friendly and saves me money!"</div>
+                    <div class="testimonial-author">- Emily R.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tips" class="tips">
+        <div class="container">
+            <h2>Water Conservation Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>Water Early or Late</h3>
+                    <p>Watering in the early morning or late evening reduces evaporation and ensures more water reaches the roots.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Use Mulch</h3>
+                    <p>Applying mulch around plants helps retain moisture and suppress weeds, reducing the need for frequent watering.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Check for Leaks</h3>
+                    <p>Regularly inspect your irrigation system for leaks or clogs to ensure efficient water use.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Group Plants Wisely</h3>
+                    <p>Group plants with similar water needs together to optimize irrigation and reduce waste.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>If you have any questions or would like to schedule a consultation, please fill out the form below or contact us directly.</p>
+                    <p><strong>Address:</strong> 18 Waverly Pl, New York, NY 10003, USA</p>
+                    <p><strong>Email:</strong> info@naturanook.com</p>
+                    <p><strong>Phone:</strong> (123) 456-7890</p>
+                </div>
+                <div class="contact-form">
+                    <form action="#" method="post">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-     <div class="overlay">
+
+
+  <div class="overlay">
     <div class="dialog-box" onmouseover="redirect()">
       <h2>🍪 Our New Cookie Policy !</h2>
       <p>
@@ -458,12 +965,35 @@
   </script>
 
 
-    
-    <!-- Footer Section -->
-    <footer class="bg-white py-6">
-        <div class="container mx-auto text-center">
-            <p class="text-gray-700">Address: 40 Washington Square S, New York, NY 10012, USA</p>
-            <p class="text-gray-700">© 2023 NestBud Gardening. All rights reserved.</p>
+ 
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>NaturaNook is dedicated to providing sustainable irrigation solutions that conserve water and promote healthy plant growth.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#systems">Irrigation Systems</a></li>
+                    <li><a href="#smart">Smart Control</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#tips">Water Tips</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 NaturaNook. All rights reserved.
         </div>
     </footer>
 </body>
