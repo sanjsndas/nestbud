@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - NestBud Gardening</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes droplet-fall {
+            0% { transform: translateY(-20px); opacity: 0; }
+            20% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .droplet {
+            position: absolute;
+            width: 16px;
+            height: 24px;
+            background: rgba(149, 202, 255, 0.6);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: droplet-fall 5s linear infinite;
+        }
+        .page-bg {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        .nav-link:hover {
+            color: #1e40af;
+            border-bottom: 2px solid #1e40af;
+        }
+        .terms-point {
+            background-color: white;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="page-bg min-h-screen font-sans text-gray-800">
+    <!-- Water droplet background elements -->
+    <div class="fixed inset-0 overflow-hidden z-0 pointer-events-none">
+        <div class="droplet" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="droplet" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="droplet" style="left: 35%; animation-delay: 2.5s;"></div>
+        <div class="droplet" style="left: 50%; animation-delay: 1.5s;"></div>
+        <div class="droplet" style="left: 65%; animation-delay: 3s;"></div>
+        <div class="droplet" style="left: 80%; animation-delay: 0.5s;"></div>
+        <div class="droplet" style="left: 90%; animation-delay: 2s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg relative z-10">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div>
+                        <span class="text-2xl font-bold text-blue-800">NestBud Gardening</span>
+                        <p class="text-sm text-blue-600 italic">"Every drop, perfectly placed."</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Home</a>
+                    <a href="privacy.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Privacy</a>
+                    <a href="terms.html" class="nav-link py-2 px-4 text-blue-800 border-b-2 border-blue-800 font-medium" aria-current="page">Terms & Conditions</a>
+                    <a href="cookies.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Cookies</a>
+                    <a href="contact.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Contact Us</a>
+                </div>
+                <button class="md:hidden text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container mx-auto px-6 py-12 relative z-10">
+        <!-- Terms Header -->
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-4">Terms & Conditions</h1>
+            <p class="text-xl text-blue-800 max-w-4xl mx-auto">Last Updated: January 15, 2024</p>
+        </header>
+
+        <!-- Introduction Section -->
+        <section class="mb-12 bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Introduction</h2>
+            <p class="text-gray-700 mb-4">Welcome to NestBud Gardening. These Terms & Conditions govern your use of our website and services. By accessing or using our services, you agree to be bound by these terms. If you disagree with any part of these terms, please do not use our services.</p>
+            <p class="text-gray-700">These Terms & Conditions constitute a legally binding agreement between you and NestBud Gardening regarding your use of the website and services. We reserve the right to modify these terms at any time, and your continued use constitutes acceptance of those changes.</p>
+        </section>
+
+        <!-- Terms Points Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-8">Detailed Terms & Conditions</h2>
+            
+            <!-- Point 1 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">1. Service Description</h3>
+                <p class="text-gray-700">NestBud Gardening provides micro-irrigation solutions, garden design services, soil restoration, and related horticultural services. Our offerings include consultation, installation, maintenance, and educational resources. Services may vary by location and availability, and we reserve the right to modify or discontinue services without notice. All descriptions of services are subject to change at our sole discretion.</p>
+            </div>
+
+            <!-- Point 2 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">2. Account Registration</h3>
+                <p class="text-gray-700">Certain services require account creation. You must provide accurate, complete information and keep credentials secure. You are responsible for all activities under your account. We reserve the right to refuse service, terminate accounts, or remove/edit content at our discretion. Accounts are non-transferable, and you must notify us immediately of any unauthorized use.</p>
+            </div>
+
+            <!-- Point 3 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">3. User Responsibilities</h3>
+                <p class="text-gray-700">Users must comply with all applicable laws and not misuse services. Prohibited activities include unauthorized access, interference with services, data mining, and introducing malicious code. You agree not to reproduce, duplicate, copy, sell, resell, or exploit any portion of our services without express written permission. Commercial use requires prior authorization.</p>
+            </div>
+
+            <!-- Point 4 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">4. Intellectual Property</h3>
+                <p class="text-gray-700">All content, trademarks, and data on our website are owned by or licensed to NestBud Gardening. This material is protected by intellectual property laws. You may access content for personal use but may not modify, publish, transmit, or create derivative works without permission. Our trademarks may not be used in connection with any product/service without written consent.</p>
+            </div>
+
+            <!-- Point 5 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">5. User Content</h3>
+                <p class="text-gray-700">By submitting content (reviews, photos, etc.), you grant us a worldwide, non-exclusive license to use, reproduce, and display it. You warrant that you own all rights to such content. We may monitor and remove content at our discretion. User content must not violate any laws or third-party rights, including copyright, privacy, or publicity rights.</p>
+            </div>
+
+            <!-- Point 6 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">6. Service Modifications</h3>
+                <p class="text-gray-700">We reserve the right to modify or discontinue services temporarily or permanently without notice. We shall not be liable for any modification, suspension, or discontinuance. Prices for services are subject to change without notice. We may impose limits on certain features or restrict access without notice or liability.</p>
+            </div>
+
+            <!-- Point 7 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">7. Payment Terms</h3>
+                <p class="text-gray-700">Payment for services is due as specified in service agreements. We accept various payment methods as displayed on our website. Late payments may incur interest charges. All prices exclude taxes unless stated otherwise. You are responsible for any taxes associated with services. We may change prices at any time and are not obligated to provide price protection or refunds.</p>
+            </div>
+
+            <!-- Point 8 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">8. Cancellation Policy</h3>
+                <p class="text-gray-700">Services may be cancelled according to the terms of your service agreement. Installation services cancelled less than 48 hours before scheduled appointment may incur fees. Monthly maintenance plans require 30 days notice for cancellation. Refunds, when applicable, will be issued to the original payment method. Special order items may be non-refundable.</p>
+            </div>
+
+            <!-- Point 9 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">9. Warranty Disclaimer</h3>
+                <p class="text-gray-700">Services are provided "as is" without warranties of any kind. We disclaim all warranties, express or implied, including merchantability, fitness for purpose, and non-infringement. We do not warrant that services will be uninterrupted, secure, or error-free. Results may vary based on environmental factors beyond our control. Plant performance is not guaranteed.</p>
+            </div>
+
+            <!-- Point 10 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">10. Limitation of Liability</h3>
+                <p class="text-gray-700">To the maximum extent permitted by law, NestBud Gardening shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from use of services. Our total liability for any claims shall not exceed the amount you paid for the services in question. Some jurisdictions do not allow limitations of liability, so these limitations may not apply to you.</p>
+            </div>
+
+            <!-- Point 11 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">11. Indemnification</h3>
+                <p class="text-gray-700">You agree to defend, indemnify, and hold harmless NestBud Gardening from any claims, damages, liabilities, and expenses arising from your use of services or violation of these terms. This includes third-party claims related to your content or conduct. We reserve the right to assume exclusive defense and control of any matter subject to indemnification.</p>
+            </div>
+
+            <!-- Point 12 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">12. Third-Party Links</h3>
+                <p class="text-gray-700">Our services may contain links to third-party websites. We have no control over and assume no responsibility for their content, privacy policies, or practices. You acknowledge that we are not responsible for the availability or accuracy of such sites. Inclusion of links does not imply endorsement. Use third-party sites at your own risk.</p>
+            </div>
+
+            <!-- Point 13 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">13. Termination</h3>
+                <p class="text-gray-700">We may terminate or suspend your access to services immediately, without notice, for any reason, including breach of these terms. Upon termination, your right to use services ceases immediately. All provisions which should survive termination shall remain in effect, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
+            </div>
+
+            <!-- Point 14 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">14. Governing Law</h3>
+                <p class="text-gray-700">These terms shall be governed by New York law without regard to conflict of law provisions. Any disputes shall be resolved in state or federal courts located in New York County. You waive any objections to venue or forum non conveniens. The United Nations Convention on Contracts for the International Sale of Goods does not apply.</p>
+            </div>
+
+            <!-- Point 15 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">15. Dispute Resolution</h3>
+                <p class="text-gray-700">Before filing any legal action, you agree to attempt informal resolution by contacting us. If unresolved within 60 days, disputes shall be resolved through binding arbitration administered by the American Arbitration Association under its Commercial Arbitration Rules. Judgment may be entered in any court with jurisdiction. Arbitration shall occur in New York, NY.</p>
+            </div>
+
+            <!-- Point 16 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">16. Force Majeure</h3>
+                <p class="text-gray-700">We shall not be liable for failure to perform due to events beyond our reasonable control, including natural disasters, acts of government, labor disputes, and infrastructure failures. During such events, obligations shall be suspended until the event concludes. If force majeure continues for 30 days, either party may terminate affected services.</p>
+            </div>
+
+            <!-- Point 17 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">17. Severability</h3>
+                <p class="text-gray-700">If any provision of these terms is found invalid or unenforceable, that provision shall be enforced to the maximum extent possible, and remaining provisions shall remain in full effect. The invalid provision shall be replaced by a valid one that most closely matches the intent of the original. No failure to enforce any right constitutes a waiver.</p>
+            </div>
+
+            <!-- Point 18 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">18. Assignment</h3>
+                <p class="text-gray-700">You may not assign or transfer these terms without our written consent. Any unauthorized assignment shall be null and void. We may assign these terms without restriction, including to any successor in interest. These terms shall bind and benefit permitted assigns. Change of control transactions constitute valid assignments under these terms.</p>
+            </div>
+
+            <!-- Point 19 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">19. Entire Agreement</h3>
+                <p class="text-gray-700">These terms constitute the entire agreement between you and NestBud Gardening regarding services, superseding prior agreements. No oral or written information constitutes a warranty unless incorporated herein. Any ambiguities shall not be construed against the drafting party. Section headings are for convenience only and do not affect interpretation.</p>
+            </div>
+
+            <!-- Point 20 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">20. Changes to Terms</h3>
+                <p class="text-gray-700">We reserve the right to modify these terms at any time. Changes become effective upon posting. Material changes will be notified via email or website notice. Your continued use after changes constitutes acceptance. You should review terms periodically. If you disagree with changes, you must stop using services. The "Last Updated" date indicates revision date.</p>
+            </div>
+
+            <!-- Point 21 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">21. Contact Information</h3>
+                <p class="text-gray-700">For questions about these terms, please contact us at:</p>
+                <p class="text-gray-700"><strong>Email:</strong> legal@nestbudgardening.com</p>
+                <p class="text-gray-700"><strong>Phone:</strong> (123) 456-7890</p>
+                <p class="text-gray-700"><strong>Address:</strong> 40 Washington Square S, New York, NY 10012, USA</p>
+                <p class="text-gray-700">Official notices must be sent via certified mail to our corporate address.</p>
+            </div>
+
+            <!-- Point 22 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">22. Age Restrictions</h3>
+                <p class="text-gray-700">Our services are intended for users 18 years or older. By using services, you represent you are at least 18. We do not knowingly collect personal information from individuals under 18. If we become aware of such information, we will take steps to delete it promptly. Parents or guardians are encouraged to monitor their children's online activities and contact us if they believe we have collected information from a minor.</p>
+            </div>
+
+            <!-- Point 23 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">23. User Feedback</h3>
+                <p class="text-gray-700">We welcome user feedback and suggestions regarding our services. By submitting feedback, you grant us the right to use your comments without any obligation to you. We may use feedback to improve our services and may publish it in promotional materials. However, we will not disclose your personal information without your consent.</p>
+            </div>
+
+            <!-- Point 24 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">24. Marketing Communications</h3>
+                <p class="text-gray-700">By providing your contact information, you consent to receive marketing communications from us. You can opt-out of receiving these communications at any time by following the unsubscribe instructions included in each email or by contacting us directly. We respect your privacy and will not share your information with third parties for marketing purposes without your consent.</p>
+            </div>
+
+            <!-- Point 25 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">25. Social Media Policy</h3>
+                <p class="text-gray-700">We encourage users to engage with us on social media platforms. However, we reserve the right to remove any content that violates our community guidelines or is deemed inappropriate. User interactions on our social media pages are subject to the terms and conditions of the respective platforms. We are not responsible for the content posted by users on these platforms.</p>
+            </div>
+
+            <!-- Point 26 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">26. Security of Information</h3>
+                <p class="text-gray-700">We take reasonable measures to protect your personal information from unauthorized access, use, or disclosure. However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your information, we cannot guarantee its absolute security. You are responsible for maintaining the confidentiality of your account information.</p>
+            </div>
+
+            <!-- Point 27 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">27. User Conduct</h3>
+                <p class="text-gray-700">You agree to use our services in a manner that is lawful and respectful of others. You shall not engage in any conduct that restricts or inhibits anyone's use or enjoyment of the services, or that may harm NestBud Gardening or users of the services. Any violation of these terms may result in immediate termination of your access to services.</p>
+            </div>
+
+            <!-- Point 28 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">28. Disclaimer of Endorsements</h3>
+                <p class="text-gray-700">References to any specific service, product, or process on our website do not constitute or imply an endorsement, recommendation, or favoring by NestBud Gardening. We do not endorse any third-party products or services and are not responsible for their content or practices. Users should conduct their own research before engaging with third-party services.</p>
+            </div>
+
+            <!-- Point 29 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">29. Electronic Communications</h3>
+                <p class="text-gray-700">By using our services, you consent to receive electronic communications from us. These communications may include notices about your account, service updates, and promotional materials. You agree that all agreements, notices, disclosures, and other communications we provide to you electronically will satisfy any legal requirements that such communications be in writing.</p>
+            </div>
+
+            <!-- Point 30 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">30. No Waiver</h3>
+                <p class="text-gray-700">Our failure to enforce any right or provision of these terms shall not be deemed a waiver of such right or provision. Any waiver of any provision of these terms will be effective only if in writing and signed by an authorized representative of NestBud Gardening. No waiver of any breach shall be deemed a waiver of any subsequent breach.</p>
+            </div>
+
+            <!-- Point 31 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">31. Headings</h3>
+                <p class="text-gray-700">The section headings in these terms are for convenience only and have no legal or contractual effect. They do not affect the interpretation of these terms and should not be used to construe the meaning of any provision. The headings are intended solely to assist in navigating the terms.</p>
+            </div>
+
+            <!-- Point 32 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">32. Survival</h3>
+                <p class="text-gray-700">All provisions of these terms that by their nature should survive termination shall survive, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability. The termination of your access to services does not affect any rights or obligations that have accrued prior to such termination.</p>
+            </div>
+
+            <!-- Point 33 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">33. Feedback and Suggestions</h3>
+                <p class="text-gray-700">We welcome your feedback and suggestions regarding our services. By submitting feedback, you grant us the right to use your comments without any obligation to you. We may use feedback to improve our services and may publish it in promotional materials. However, we will not disclose your personal information without your consent.</p>
+            </div>
+
+            <!-- Point 34 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">34. Privacy Policy</h3>
+                <p class="text-gray-700">Your use of our services is also governed by our Privacy Policy, which explains how we collect, use, and protect your personal information. By using our services, you consent to the collection and use of your information as outlined in the Privacy Policy. We encourage you to review the Privacy Policy periodically for updates.</p>
+            </div>
+
+            <!-- Point 35 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">35. Contact Us</h3>
+                <p class="text-gray-700">For any questions or concerns regarding these Terms & Conditions, please contact us at:</p>
+                <p class="text-gray-700"><strong>Email:</strong> support@nestbudgardening.com</p>
+                <p class="text-gray-700"><strong>Phone:</strong> (123) 456-7890</p>
+                <p class="text-gray-700"><strong>Address:</strong> 40 Washington Square S, New York, NY 10012, USA</p>
+            </div>
+
+            <!-- Point 36 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">36. User Agreement</h3>
+                <p class="text-gray-700">By using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions. If you do not agree to these terms, you must not use our services. Your continued use of our services after any changes to these terms constitutes your acceptance of the new terms.</p>
+            </div>
+
+            <!-- Point 37 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">37. Acknowledgment</h3>
+                <p class="text-gray-700">You acknowledge that you have read and understood these Terms & Conditions and agree to be bound by them. You further acknowledge that these terms may be amended from time to time and that it is your responsibility to review them periodically for any changes.</p>
+            </div>
+
+            <!-- Point 38 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">38. Effective Date</h3>
+                <p class="text-gray-700">These Terms & Conditions are effective as of January 15, 2024. Any changes to these terms will be effective immediately upon posting on our website. It is your responsibility to review these terms regularly to stay informed of any updates.</p>
+            </div>
+
+            <!-- Point 39 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">39. User Consent</h3>
+                <p class="text-gray-700">By using our services, you consent to the collection and use of your information as outlined in our Privacy Policy. If you do not agree with our policies and practices, please do not use our services. Your continued use of our services after changes to this policy will be deemed as acceptance of those changes.</p>
+            </div>
+
+            <!-- Point 40 -->
+            <div class="terms-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">40. Acceptance of Terms</h3>
+                <p class="text-gray-700">By using our services, you acknowledge that you have read and understood these Terms & Conditions and agree to be bound by them. If you do not agree with any part of these terms, please refrain from using our services.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-white py-6">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-700">Address: 40 Washington Square S, New York, NY 10012, USA</p>
+            <p class="text-gray-700">Phone: (123) 456-7890</p>
+            <p class="text-gray-700">© 2023 NestBud Gardening. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

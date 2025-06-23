@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NestBud Gardening - Micro-irrigation Experts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes droplet-fall {
+            0% { transform: translateY(-20px); opacity: 0; }
+            20% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .droplet {
+            position: absolute;
+            width: 16px;
+            height: 24px;
+            background: rgba(149, 202, 255, 0.6);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: droplet-fall 5s linear infinite;
+        }
+        .page-bg {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        .nav-link:hover {
+            color: #1e40af;
+            border-bottom: 2px solid #1e40af;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        .water-wave {
+            position: relative;
+            overflow: hidden;
+        }
+        .water-wave::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.4) 0%, rgba(0,0,0,0) 70%);
+            animation: wave 3s linear infinite;
+        }
+        @keyframes wave {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body class="page-bg min-h-screen font-sans text-gray-800">
+    <!-- Water droplet background elements -->
+    <div class="fixed inset-0 overflow-hidden z-0 pointer-events-none">
+        <div class="droplet" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="droplet" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="droplet" style="left: 35%; animation-delay: 2.5s;"></div>
+        <div class="droplet" style="left: 50%; animation-delay: 1.5s;"></div>
+        <div class="droplet" style="left: 65%; animation-delay: 3s;"></div>
+        <div class="droplet" style="left: 80%; animation-delay: 0.5s;"></div>
+        <div class="droplet" style="left: 90%; animation-delay: 2s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg relative z-10">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div>
+                        <span class="text-2xl font-bold text-blue-800">NestBud Gardening</span>
+                        <p class="text-sm text-blue-600 italic">"Every drop, perfectly placed."</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link py-2 px-4 text-blue-800 border-b-2 border-blue-800 font-medium" aria-current="page">Home</a>
+                    <a href="privacy.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Privacy</a>
+                    <a href="terms.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Terms & Conditions</a>
+                    <a href="cookies.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Cookies</a>
+                    <a href="contact.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Contact Us</a>
+                </div>
+                <button class="md:hidden text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative z-10">
+        <div class="container mx-auto px-6 py-16 md:py-24 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-blue-900 mb-6">Revolutionizing Urban Agriculture Through Precision Hydration</h1>
+            <p class="text-xl md:text-2xl text-blue-800 mb-8">At NestBud Gardening, we pioneer advanced micro-irrigation technologies that combine environmental sustainability with horticultural excellence. Our systems transform urban spaces into thriving ecosystems while conserving our planet's most precious resource.</p>
+            <div class="water-wave inline-block mb-12">
+                <img src="p2.png" alt="Micro-irrigation system" class="rounded-lg shadow-xl max-w-full h-auto" style="max-height: 400px;">
+            </div>
+            <a href="#services" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block shadow-lg">Explore Our Innovative Solutions</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container mx-auto px-6 py-12 relative z-10">
+        <!-- Services Expanded Section -->
+        <section id="services" class="mb-20">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Comprehensive Horticultural Services</h2>
+            <p class="text-center text-gray-700 mb-10 max-w-4xl mx-auto">NestBud Gardening offers a full spectrum of water-efficient gardening solutions tailored to urban environments, community spaces, and permaculture projects. Our interdisciplinary approach combines cutting-edge irrigation technology with time-tested organic gardening principles.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <img src="s1.jpeg" alt="Micro-irrigation Installation" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Smart Irrigation Systems</h3>
+                        <section class="text-gray-700 mb-4 space-y-3">
+                            <p>Our precision-engineered micro-irrigation solutions revolutionize water delivery by targeting root zones with droplet-by-droplet accuracy. Using moisture sensors and automated controls, we create intelligent watering networks that adjust to weather conditions, soil types, and plant requirements.</p>
+                            <p>The patented RainDrop™ emitter technology eliminates runoff and evaporation waste while preventing fungal diseases caused by foliage wetting. Our systems integrate seamlessly with existing landscapes while offering remote monitoring via mobile apps.</p>
+                            <p>Commercial-scale installations feature rainwater harvesting integration and greywater recycling components that can reduce municipal water consumption by up to 70%.</p>
+                        </section>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center">Detailed Specifications →</a>
+                    </div>
+                </div>
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <img src="s2.png" alt="Soil Restoration" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Soil Regeneration Services</h3>
+                        <section class="text-gray-700 mb-4 space-y-3">
+                            <p>Healthy soil forms the foundation of every successful garden. Our comprehensive soil revitalization program begins with detailed laboratory analysis of mineral content, microbial activity, and water retention capacity.</p>
+                            <p>We employ regenerative techniques including biochar amendment, mycorrhizal inoculation, and compost tea applications to rebuild soil structure. Our permaculture specialists design customized crop rotation schedules and green manure planting strategies that naturally replenish nutrients.</p>
+                            <p>Urban soil remediation services address common contaminants like heavy metals and petroleum residues through phytoremediation techniques using specialized hyperaccumulator plants combined with organic chelation treatments.</p>
+                        </section>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center">Soil Health Reports →</a>
+                    </div>
+                </div>
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <img src="s3.jpg" alt="Garden Consultation" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Integrated Garden Design</h3>
+                        <section class="text-gray-700 mb-4 space-y-3">
+                            <p>Our holistic design methodology creates beautiful, productive landscapes that thrive with minimal inputs. Combining principles of permaculture, xeriscaping, and ecological horticulture, we develop site-specific plans that enhance biodiversity while maximizing water efficiency.</p>
+                            <p>Each design undergoes rigorous microclimate analysis using drone mapping and 3D modeling software to optimize plant placement. Our edible landscapes incorporate companion planting strategies that naturally deter pests while boosting yields.</p>
+                            <p>For commercial clients, we offer full lifecycle management including seasonal maintenance scheduling, integrated pest management programs, and staff training in sustainable horticultural practices.</p>
+                        </section>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center">Design Portfolio →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expanded Consultant Section -->
+        <section class="mb-20 bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="md:flex">
+                <div class="md:w-1/2">
+                    <img src="p3.jpg" alt="Garden Consultant" class="w-full h-full object-cover">
+                </div>
+                <div class="md:w-1/2 p-8">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Comprehensive Gardening Consultation Services</h2>
+                    <article class="space-y-6">
+                        <p>Our consultation process begins with an in-depth site evaluation conducted by certified horticultural therapists and irrigation specialists. Using advanced diagnostic tools including soil penetrometers, infrared thermography, and digital moisture meters, we assess every facet of your garden's ecosystem.</p>
+                        
+                        <section>
+                            <h3 class="text-xl font-semibold text-blue-800 mb-2">Detailed Analysis Components:</h3>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><strong>Hydrological Assessment:</strong> Mapping water flow patterns, drainage issues, and optimal irrigation zones using GPS-enabled topography surveys</li>
+                                <li><strong>Soil Profiling:</strong> Comprehensive testing including texture analysis, pH measurement, organic matter content, and microbial biomass assessment</li>
+                                <li><strong>Plant Health Audit:</strong> Identification of nutritional deficiencies, disease pressures, and pest vulnerabilities through microscopic examination</li>
+                                <li><strong>Environmental Stress Evaluation:</strong> Measurement of urban heat island effects, wind exposure, and pollution impacts on plant vitality</li>
+                            </ul>
+                        </section>
+
+                        <p>Following the assessment phase, we develop tailored recommendations that address both immediate concerns and long-term sustainability goals. Our action plans incorporate progressive implementation milestones with measurable performance indicators.</p>
+
+                        <section>
+                            <h3 class="text-xl font-semibold text-blue-800 mb-2">Consultation Deliverables:</h3>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>100+ page digital report with annotated photographs and interactive 3D models</li>
+                                <li>Customized plant selection guide optimized for your microclimate</li>
+                                <li>Five-year water conservation strategy with projected savings analysis</li>
+                                <li>Maintenance calendar synchronized with local phenological indicators</li>
+                                <li>Round-the-clock access to our horticultural support team</li>
+                            </ul>
+                        </section>
+                    </article>
+
+                    <div class="mt-8 bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-blue-800 mb-2">Specialized Consultation Packages:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white p-3 rounded shadow">
+                                <h5 class="font-semibold">Urban Homestead Starter</h5>
+                                <p class="text-sm">Transform smaller spaces into food-producing oases with integrated watering systems</p>
+                            </div>
+                            <div class="bg-white p-3 rounded shadow">
+                                <h5 class="font-semibold">Corporate Campus Solutions</h5>
+                                <p class="text-sm">Large-scale sustainable landscaping with automated maintenance protocols</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="mt-6 bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded inline-block transition duration-300 shadow-md">Schedule Your Comprehensive Assessment</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expanded About Us Section -->
+        <section id="about" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Story: Cultivating Sustainable Futures</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">From Academic Research to Urban Farming Revolution</h3>
+                    <article class="space-y-6">
+                        <p>NestBud Gardening traces its roots to 2010 when founder Dr. Maya Waters began her pioneering research in applied hydroecology at NYU's Environmental Studies Department. Frustrated by the disconnect between academic water conservation theories and practical urban gardening needs, Dr. Waters established our first experimental micro-irrigation plot in a Greenwich Village community garden.</p>
+
+                        <section>
+                            <h4 class="text-xl font-medium text-blue-700 mb-2">Key Milestones in Our Journey:</h4>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><strong>2012:</strong> Developed prototype moisture-responsive emitters that reduced water use by 58% in field trials</li>
+                                <li><strong>2015:</strong> Officially incorporated as NestBud Gardening with three employees serving NYC clients</li>
+                                <li><strong>2017:</strong> Awarded Urban Innovation Grant from NYC Department of Environmental Protection</li>
+                                <li><strong>2019:</strong> Expanded to commercial-scale installations with proprietary monitoring software</li>
+                                <li><strong>2021:</strong> Recognized by EPA for outstanding contribution to sustainable urban development</li>
+                                <li><strong>2023:</strong> Current team of 28 specialists managing projects across the tri-state area</li>
+                            </ul>
+                        </section>
+
+                        <p>Today, our interdisciplinary team blends scientific rigor with hands-on gardening expertise. Staff members include certified arborists, soil scientists, landscape architects, and master gardeners who participate in ongoing research collaborations with leading universities.</p>
+
+                        <section>
+                            <h4 class="text-xl font-medium text-blue-700 mb-2">Philosophy and Approach:</h4>
+                            <p>We embrace a systems-thinking methodology that views urban gardens as interconnected ecological networks. Our design principles emphasize:</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><strong>Biomimicry:</strong> Designing solutions inspired by natural hydrological patterns</li>
+                                <li><strong>Resilience Engineering:</strong > Building systems that adapt to changing environmental conditions</li>
+                                <li><strong>Community Engagement:</strong> Involving local stakeholders in the design and maintenance processes to foster ownership and stewardship</li>
+                            </ul>
+                        </section>
+                    </article>
+                </div>
+                <div>
+                    <img src="p1.png" alt="Our Team" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Expanded Testimonials Section -->
+        <section id="testimonials" class="mb-20 bg-blue-50 rounded-xl p-8">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">What Our Clients Say About Us</h2>
+            <p class="text-center text-gray-700 mb-10 max-w-4xl mx-auto">Our clients' satisfaction is our top priority. We take pride in the positive feedback we receive, which reflects our commitment to excellence in service and sustainable practices. Here are some testimonials from our valued customers:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="t1.jpg" alt="Sarah J." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah J.</h4>
+                            <p class="text-blue-600 text-sm">Brooklyn, NY</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Our community garden's water bill dropped by 55% after NestBud installed their micro-irrigation system. The plants are actually healthier now too! Their team was professional, knowledgeable, and truly cared about our project."</p>
+                    <div class="mt-4 flex">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="t2.jpg" alt="Michael T." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael T.</h4>
+                            <p class="text-blue-600 text-sm">Queens, NY</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"The soil restoration service transformed my clay-heavy yard into a productive vegetable garden. I'm amazed at the difference organic methods can make. The team was patient and explained every step of the process."</p>
+                    <div class="mt-4 flex">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="t3.jpg" alt="Priya K." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Priya K.</h4>
+                            <p class="text-blue-600 text-sm">Manhattan, NY</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"As a busy professional, the automated watering system has been a lifesaver. My plants have never looked better, and I save hours each week. The customer service was exceptional, and I felt supported throughout the entire process."</p>
+                    <div class="mt-4 flex">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expanded Gardening Tips Section -->
+        <section id="tips" class="mb-20">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Water-Smart Gardening Tips for Every Gardener</h2>
+            <p class="text-center text-gray-700 mb-10 max-w-4xl mx-auto">Whether you're a seasoned gardener or just starting out, implementing water-smart practices can significantly enhance your garden's health and sustainability. Here are some expert tips to help you conserve water while promoting plant growth:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="p4.jpg" alt="Watering Tips" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">5 Ways to Reduce Garden Water Usage</h3>
+                        <ol class="list-decimal pl-6 space-y-2">
+                            <li>Implement drip irrigation systems to target roots directly, minimizing evaporation and runoff.</li>
+                            <li>Use organic mulch to retain soil moisture and reduce evaporation, while also suppressing weeds.</li>
+                            <li>Choose drought-resistant plants that thrive in your climate, reducing the need for supplemental watering.</li>
+                            <li>Water early in the morning or late in the evening to minimize evaporation losses during the hottest parts of the day.</li>
+                            <li>Collect rainwater in barrels for irrigation during dry spells, utilizing a natural resource to nourish your garden.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="p5.jpg" alt="Soil Health Tips" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Improving Soil Health for Better Water Retention</h3>
+                        <p class="text-gray-700 mb-4">Healthy soil is the foundation of a thriving garden. Here are some tips to enhance your soil's ability to retain moisture:</p>
+                        <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+                            <li>Incorporate organic matter like compost to enhance soil structure and increase its water-holding capacity.</li>
+                            <li>Test your soil regularly to understand its nutrient needs and adjust your amendments accordingly.</li>
+                            <li>Rotate crops to prevent nutrient depletion and pest buildup, ensuring a balanced ecosystem in your garden.</li>
+                            <li>Consider cover cropping during the off-season to protect soil from erosion and improve its organic content.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expanded Disclaimer Section -->
+        <section class="mb-20 bg-gray-100 p-6 rounded-lg">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Disclaimer</h2>
+            <p class="text-gray-700">The information provided on this website is for general informational purposes only. While we strive to provide accurate and up-to-date information, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk. We encourage users to consult with a qualified professional before making any decisions based on the information provided herein.</p>
+        </section>
+
+        <!-- Expanded Customer Satisfaction Section -->
+        <section class="mb-20 text-center">
+            <h2 class="text-3xl font-bold text-blue-900 mb-4">Customer Satisfaction: Our Commitment to You</h2>
+            <p class="text-gray-700 mb-4">At NestBud Gardening, we prioritize our clients' needs and strive to exceed their expectations. Our commitment to quality service and sustainable practices ensures that your gardening experience is both enjoyable and rewarding. We believe that satisfied customers are the foundation of our success, and we work tirelessly to build lasting relationships based on trust and transparency.</p>
+            <p class="text-gray-700">Join our community of satisfied customers and transform your garden today! Contact us to learn more about our services and how we can help you achieve your gardening goals.</p>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-white py-6">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-700">Address: 40 Washington Square S, New York, NY 10012, USA</p>
+            <p class="text-gray-700">© 2023 NestBud Gardening. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

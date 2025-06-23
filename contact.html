@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NestBud Gardening</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes droplet-fall {
+            0% { transform: translateY(-20px); opacity: 0; }
+            20% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .droplet {
+            position: absolute;
+            width: 16px;
+            height: 24px;
+            background: rgba(149, 202, 255, 0.6);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: droplet-fall 5s linear infinite;
+        }
+        .page-bg {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        .nav-link:hover {
+            color: #1e40af;
+            border-bottom: 2px solid #1e40af;
+        }
+        .contact-point {
+            background-color: white;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="page-bg min-h-screen font-sans text-gray-800">
+    <!-- Water droplet background elements -->
+    <div class="fixed inset-0 overflow-hidden z-0 pointer-events-none">
+        <div class="droplet" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="droplet" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="droplet" style="left: 35%; animation-delay: 2.5s;"></div>
+        <div class="droplet" style="left: 50%; animation-delay: 1.5s;"></div>
+        <div class="droplet" style="left: 65%; animation-delay: 3s;"></div>
+        <div class="droplet" style="left: 80%; animation-delay: 0.5s;"></div>
+        <div class="droplet" style="left: 90%; animation-delay: 2s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg relative z-10">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div>
+                        <span class="text-2xl font-bold text-blue-800">NestBud Gardening</span>
+                        <p class="text-sm text-blue-600 italic">"Every drop, perfectly placed."</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Home</a>
+                    <a href="privacy.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Privacy</a>
+                    <a href="terms.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Terms & Conditions</a>
+                    <a href="cookies.html" class="nav-link py-2 px-4 text-gray-700 hover:text-blue-800 transition duration-300">Cookies</a>
+                    <a href="contact.html" class="nav-link py-2 px-4 text-blue-800 border-b-2 border-blue-800 font-medium" aria-current="page">Contact Us</a>
+                </div>
+                <button class="md:hidden text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container mx-auto px-6 py-12 relative z-10">
+        <!-- Contact Form Section -->
+        <section class="mb-20 contact-form p-8 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-6">Get in Touch With Us</h2>
+            <p class="text-center text-gray-700 mb-8">We'd love to hear from you! Whether you have a question about our services, need a quote, or want to schedule a consultation, our team is here to help.</p>
+            
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="first-name" class="block text-gray-700 font-medium mb-2">First Name</label>
+                        <input type="text" id="first-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="last-name" class="block text-gray-700 font-medium mb-2">Last Name</label>
+                        <input type="text" id="last-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                
+                <div>
+                    <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                    <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                
+                <div>
+                    <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In</label>
+                    <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Select a service</option>
+                        <option value="micro-irrigation">Micro-Irrigation Systems</option>
+                        <option value="soil-restoration">Soil Restoration</option>
+                        <option value="garden-design">Garden Design</option>
+                        <option value="consultation">Consultation</option>
+                        <option value="maintenance">Maintenance Services</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                    <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                
+                <div class="flex items-center">
+                    <input type="checkbox" id="consent" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="consent" class="ml-2 block text-sm text-gray-700">
+                        I agree to the <a href="privacy.html" class="text-blue-600 hover:text-blue-800">Privacy Policy</a> and <a href="terms.html" class="text-blue-600 hover:text-blue-800">Terms & Conditions</a>
+                    </label>
+                </div>
+                
+                <div>
+                    <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">Send Message</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Comprehensive Contact Information</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Phone Support</h3>
+                    <p class="text-gray-700 mb-1">Main: (123) 456-7890</p>
+                    <p class="text-gray-700">Toll-Free: (800) 123-4567</p>
+                    <p class="text-gray-600 mt-4">Monday-Friday: 8am-6pm EST</p>
+                    <p class="text-gray-600">Saturday: 9am-2pm EST</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Email Inquiries</h3>
+                    <p class="text-gray-700 mb-1">General: info@nestbudgardening.com</p>
+                    <p class="text-gray-700 mb-1">Sales: sales@nestbudgardening.com</p>
+                    <p class="text-gray-700">Support: support@nestbudgardening.com</p>
+                    <p class="text-gray-600 mt-4">Response time: 24-48 hours</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Visit Us</h3>
+                    <p class="text-gray-700">40 Washington Square S</p>
+                    <p class="text-gray-700">New York, NY 10012</p>
+                    <p class="text-gray-700">United States</p>
+                    <p class="text-gray-600 mt-4">By appointment only</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Contact Information Section -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Complete Contact Resources</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Department Contacts</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <strong class="text-gray-800">Customer Service:</strong>
+                            <p class="text-gray-700">(123) 456-7891 | service@nestbudgardening.com</p>
+                        </li>
+                        <li>
+                            <strong class="text-gray-800">Technical Support:</strong>
+                            <p class="text-gray-700">(123) 456-7892 | tech@nestbudgardening.com</p>
+                        </li>
+                        <li>
+                            <strong class="text-gray-800">Billing Inquiries:</strong>
+                            <p class="text-gray-700">(123) 456-7893 | billing@nestbudgardening.com</p>
+                        </li>
+                        <li>
+                            <strong class="text-gray-800">Media Relations:</strong>
+                            <p class="text-gray-700">(123) 456-7894 | press@nestbudgardening.com</p>
+                        </li>
+                        <li>
+                            <strong class="text-gray-800">Careers:</strong>
+                            <p class="text-gray-700">(123) 456-7895 | careers@nestbudgardening.com</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Regional Offices</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <strong class="text-gray-800">New York HQ:</strong>
+                            <p class="text-gray-700">40 Washington Square S, New York, NY 10012</p>
+                        </li>
+                        <li>
+                            <strong class="text-gray-800">Boston Branch:</strong>
+                            <p class="text-gray-700">100 Main St, Boston, MA 02108</p>
+                        </li>
+                        <li>
+                            <strong class="text-gray-800">Philadelphia Office:</strong>
+                            <p class="text-gray-700">200 Market St, Philadelphia, PA 19106</p>
+                        </li>
+                        <li>
+                            <strong class="text-gray-800">Washington DC:</strong>
+                            <p class="text-gray-700">300 Independence Ave, Washington, DC 20001</p>
+                        </li>
+                        <li>
+                            <strong class="text-gray-800">Chicago Outpost:</strong>
+                            <p class="text-gray-700">400 W Madison St, Chicago, IL 60606</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Points Section -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-8">Extended Contact Information</h2>
+            
+            <!-- Point 1 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">1. Emergency Contact Procedures</h3>
+                <p class="text-gray-700">For urgent service-related emergencies (such as irrigation system failures or water leaks), please call our 24/7 emergency hotline at (123) 456-7899. Our response team guarantees a response within 2 hours for critical situations. </p>
+            </div>
+
+            <!-- Point 2 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">2. Feedback and Suggestions</h3>
+                <p class="text-gray-700">We value your feedback! If you have suggestions for improving our services or website, please send your thoughts to feedback@nestbudgardening.com. We review all feedback and strive to implement changes that enhance your experience.</p>
+            </div>
+
+            <!-- Point 3 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">3. Service Availability</h3>
+                <p class="text-gray-700">Our services are available in select regions. To check if we operate in your area, please visit our website or contact our customer service team. We are continually expanding our service areas to better serve our clients.</p>
+            </div>
+
+            <!-- Point 4 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">4. Consultation Scheduling</h3>
+                <p class="text-gray-700">To schedule a consultation, please fill out the contact form above or call our office directly. Our team will work with you to find a convenient time for your consultation, ensuring you receive personalized service tailored to your gardening needs.</p>
+            </div>
+
+            <!-- Point 5 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">5. Service Quotes</h3>
+                <p class="text-gray-700">For a detailed quote on our services, please provide us with information about your project through the contact form or via email. Our team will respond promptly with a comprehensive quote based on your specific requirements.</p>
+            </div>
+
+            <!-- Point 6 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">6. Community Engagement</h3>
+                <p class="text-gray-700">NestBud Gardening is committed to community engagement. We participate in local events and workshops to promote sustainable gardening practices. Follow us on social media to stay updated on upcoming events and initiatives.</p>
+            </div>
+
+            <!-- Point 7 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">7. Partnership Opportunities</h3>
+                <p class="text-gray-700">If you are interested in partnering with NestBud Gardening for events, sponsorships, or collaborations, please reach out to us at partnerships@nestbudgardening.com. We are open to exploring mutually beneficial opportunities.</p>
+            </div>
+
+            <!-- Point 8 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">8. Social Media Interaction</h3>
+                <p class="text-gray-700">Connect with us on social media! We share tips, updates, and gardening inspiration. Follow us on Instagram, Facebook, and Twitter to join our community and engage with fellow gardening enthusiasts.</p>
+            </div>
+
+            <!-- Point 9 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">9. Newsletter Subscription</h3>
+                <p class="text-gray-700">Stay informed about our latest services, promotions, and gardening tips by subscribing to our newsletter. You can sign up on our website, and we promise to respect your inbox with valuable content.</p>
+            </div>
+
+            <!-- Point 10 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">10. Customer Testimonials</h3>
+                <p class="text-gray-700">We love hearing from our satisfied customers! If you would like to share your experience with NestBud Gardening, please send your testimonial to testimonials@nestbudgardening.com. Your feedback helps us grow and improve.</p>
+            </div>
+
+            <!-- Point 11 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">11. Gardening Workshops</h3>
+                <p class="text-gray-700">Join our gardening workshops to learn new skills and techniques. We offer sessions for all skill levels, from beginners to advanced gardeners. Check our website for the schedule and registration details.</p>
+            </div>
+
+            <!-- Point 12 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">12. Sustainability Practices</h3>
+                <p class="text-gray-700">At NestBud Gardening, we prioritize sustainability in all our practices. We use eco-friendly materials and methods to minimize our environmental impact. Learn more about our commitment to sustainability on our website.</p>
+            </div>
+
+            <!-- Point 13 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">13. Plant Care Resources</h3>
+                <p class="text-gray-700">Need help with plant care? Visit our website for a wealth of resources, including care guides, troubleshooting tips, and FAQs. We aim to empower you with the knowledge to keep your garden thriving.</p>
+            </div>
+
+            <!-- Point 14 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">14. Seasonal Promotions</h3>
+                <p class="text-gray-700">Keep an eye out for our seasonal promotions! We offer discounts on various services throughout the year. Sign up for our newsletter to be the first to know about these exciting offers.</p>
+            </div>
+
+            <!-- Point 15 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">15. Gardening Blog</h3>
+                <p class="text-gray-700">Check out our gardening blog for tips, tricks, and inspiration. We cover a wide range of topics, from plant selection to landscape design. Our blog is a great resource for both novice and experienced gardeners.</p>
+            </div>
+
+            <!-- Point 16 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">16. Customer Loyalty Program</h3>
+                <p class="text-gray-700">Join our customer loyalty program to earn rewards for your continued business. Members receive exclusive discounts, early access to promotions, and special offers. Sign up today to start enjoying the benefits!</p>
+            </div>
+
+            <!-- Point 17 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">17. Gardening Tools and Supplies</h3>
+                <p class="text-gray-700">We offer a selection of high-quality gardening tools and supplies for purchase. Visit our online store to browse our products and find everything you need to enhance your gardening experience.</p>
+            </div>
+
+            <!-- Point 18 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">18. Community Gardening Initiatives</h3>
+                <p class="text-gray-700">NestBud Gardening is involved in community gardening initiatives to promote green spaces and sustainable practices. If you're interested in collaborating on a community project, please reach out to us.</p>
+            </div>
+
+            <!-- Point 19 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">19. Gardening Events Calendar</h3>
+                <p class="text-gray-700">Stay updated on upcoming gardening events in your area by checking our events calendar on our website. We host and participate in various events throughout the year, and we’d love to see you there!</p>
+            </div>
+
+            <!-- Point 20 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">20. Volunteer Opportunities</h3>
+                <p class="text-gray-700">If you're passionate about gardening and want to give back to the community, consider volunteering with us. We have various opportunities available, and we'd love to have you on our team!</p>
+            </div>
+
+            <!-- Point 21 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">21. Gardening FAQs</h3>
+                <p class="text-gray-700">Have questions about gardening? Check out our FAQs section on our website for answers to common inquiries. If you don’t find what you’re looking for, feel free to reach out to us directly.</p>
+            </div>
+
+            <!-- Point 22 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">22. Customer Satisfaction Guarantee</h3>
+                <p class="text-gray-700">We stand behind our services with a customer satisfaction guarantee. If you're not completely satisfied with our work, please let us know, and we will do our best to make it right.</p>
+            </div>
+
+            <!-- Point 23 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">23. Gardening Workshops for Kids</h3>
+                <p class="text-gray-700">We offer gardening workshops specifically designed for children. These fun and educational sessions teach kids about plants, gardening techniques, and the importance of nature. Check our website for upcoming dates!</p>
+            </div>
+
+            <!-- Point 24 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">24. Eco-Friendly Practices</h3>
+                <p class="text-gray-700">At NestBud Gardening, we prioritize eco-friendly practices in all our services. We use organic materials and sustainable methods to ensure a healthy environment for your garden and the planet.</p>
+            </div>
+
+            <!-- Point 25 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">25. Gardening Resources for Schools</h3>
+                <p class="text-gray-700">We provide resources and support for schools looking to implement gardening programs. Our team can assist with curriculum development, garden design, and hands-on workshops for students.</p>
+            </div>
+
+            <!-- Point 26 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">26. Seasonal Gardening Tips</h3>
+                <p class="text-gray-700">Visit our website for seasonal gardening tips to help you maintain a thriving garden year-round. Our expert advice covers everything from planting schedules to pest management.</p>
+            </div>
+
+            <!-- Point 27 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">27. Gardening for Pollinators</h3>
+                <p class="text-gray-700">Learn how to create a pollinator-friendly garden with our resources and guides. We provide tips on selecting plants that attract bees, butterflies, and other beneficial insects.</p>
+            </div>
+
+            <!-- Point 28 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">28. Landscape Design Services</h3>
+                <p class="text-gray-700">Our landscape design services are tailored to meet your specific needs and preferences. We work closely with you to create beautiful outdoor spaces that enhance your property and lifestyle.</p>
+            </div>
+
+            <!-- Point 29 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">29. Gardening Safety Tips</h3>
+                <p class="text-gray-700">Safety is a priority in gardening. Visit our website for essential safety tips to protect yourself while gardening, including proper tool usage and safe handling of chemicals.</p>
+            </div>
+
+            <!-- Point 30 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">30. Gardening Community Forum</h3>
+                <p class="text-gray-700">Join our gardening community forum to connect with fellow gardening enthusiasts. Share tips, ask questions, and participate in discussions about all things gardening.</p>
+            </div>
+
+            <!-- Point 31 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">31. Gardening Podcasts</h3>
+                <p class="text-gray-700">Tune into our gardening podcasts for expert interviews, tips, and discussions on various gardening topics. Our podcasts are a great way to learn while on the go!</p>
+            </div>
+
+            <!-- Point 32 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">32. Gardening Books and Literature</h3>
+                <p class="text-gray-700">Explore our recommended gardening books and literature for in-depth knowledge on various gardening topics. We provide a curated list of resources for all skill levels.</p>
+            </div>
+
+            <!-- Point 33 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">33. Gardening Equipment Rentals</h3>
+                <p class="text-gray-700">We offer gardening equipment rentals for those who need tools for a short period. Check our website for available equipment and rental terms.</p>
+            </div>
+
+            <!-- Point 34 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">34. Gardening for Health and Wellness</h3>
+                <p class="text-gray-700">Discover the health benefits of gardening and how it can improve your well-being. We provide resources and tips on how to incorporate gardening into your wellness routine.</p>
+            </div>
+
+            <!-- Point 35 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">35. Gardening for Wildlife</h3>
+                <p class="text-gray-700">Learn how to create a wildlife-friendly garden that supports local ecosystems. We offer tips on plant selection and habitat creation for various wildlife species.</p>
+            </div>
+
+            <!-- Point 36 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">36. Gardening for Beginners</h3>
+                <p class="text-gray-700">If you're new to gardening, we have resources specifically designed for beginners. Our guides cover the basics of gardening, including soil preparation, planting, and maintenance.</p>
+            </div>
+
+            <!-- Point 37 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">37. Advanced Gardening Techniques</h3>
+                <p class="text-gray-700">For experienced gardeners, we offer resources on advanced techniques such as hydroponics, permaculture, and organic gardening practices. Expand your gardening knowledge with our expert tips.</p>
+            </div>
+
+            <!-- Point 38 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">38. Gardening Challenges and Solutions</h3>
+                <p class="text-gray-700">Every gardener faces challenges. Visit our website for solutions to common gardening problems, including pest control, disease management, and soil issues.</p>
+            </div>
+
+            <!-- Point 39 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">39. Gardening Events and Festivals</h3>
+                <p class="text-gray-700">Join us at local gardening events and festivals to celebrate gardening and connect with other enthusiasts. Check our events calendar for details on upcoming gatherings.</p>
+            </div>
+
+            <!-- Point 40 -->
+            <div class="contact-point">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">40. Gardening for Climate Resilience</h3>
+                <p class="text-gray-700">Learn how to garden in a way that promotes climate resilience. We provide resources on sustainable practices that help gardens thrive in changing environmental conditions.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-white py-6">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-700">Address: 40 Washington Square S, New York, NY 10012, USA</p>
+            <p class="text-gray-700">Phone: (123) 456-7890</p>
+            <p class="text-gray-700">© 2023 NestBud Gardening. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
